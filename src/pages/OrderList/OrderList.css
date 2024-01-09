@@ -1,0 +1,26 @@
+.table>thead {
+    vertical-align: middle;
+}
+
+.td {
+    vertical-align: middle !important;
+}
+
+td {
+    display: table-cell !important;
+    vertical-align: middle !important;
+}
+
+.order_list_title {
+    color: #B25C41;
+    font-weight: bold;
+    padding: 20px 0;
+}
+
+table img {
+    width: 50px;
+    height: 50px;
+}
+table i{
+    cursor: pointer;
+}
