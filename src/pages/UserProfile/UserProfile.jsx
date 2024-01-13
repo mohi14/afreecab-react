@@ -10,8 +10,13 @@ const UserProfile = () => {
                     <div className="col-lg-4">
                         <h1>Account Info</h1>
                         <img src={user} alt="" />
+                        <div>
+                            <span style={{ borderBottom: "1px solid red" }}>Name: Tonni Akter</span>
+                        </div>
                     </div>
-                    <div className="col-lg-8">
+
+
+                    {/* <div className="col-lg-8">
 
                         <table className="table">
                             <thead>
@@ -33,7 +38,7 @@ const UserProfile = () => {
                                 </tr>
                             </tbody>
                         </table>
-                    </div>
+                    </div> */}
 
                 </div>
 
