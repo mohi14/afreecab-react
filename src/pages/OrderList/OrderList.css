@@ -12,9 +12,10 @@ td {
 }
 
 .order_list_title {
-    color: #B25C41;
+    color: black;
     font-weight: bold;
     padding: 20px 0;
+    font-size: 32px;
 }
 
 table img {

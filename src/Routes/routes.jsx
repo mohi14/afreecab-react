@@ -10,6 +10,7 @@ import UserProfile from './../pages/UserProfile/UserProfile';
 import Login from "../pages/Login/Login";
 import Signup from "../pages/Signup/Signup";
 import AllBookings from "../pages/AllBookings/AllBookings";
+import UpdateUserProfile from "../pages/UpdateUserProfile/UpdateUserProfile";
 
 export const router = createBrowserRouter([
 
@@ -46,7 +47,7 @@ export const router = createBrowserRouter([
             ,
             {
                 path: "/updateUserProfile",
-                element: <UserProfile />
+                element: <UpdateUserProfile />
             },
             {
                 path: "/allBookings",
