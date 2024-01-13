@@ -7,6 +7,9 @@ import Contact from "../pages/Contact/Contact";
 import SearchResults from "../components/Home/SearchBanner/SearchResults";
 import OrderList from "../pages/OrderList/OrderList";
 import UserProfile from './../pages/UserProfile/UserProfile';
+import Login from "../pages/Login/Login";
+import Signup from "../pages/Signup/Signup";
+import AllBookings from "../pages/AllBookings/AllBookings";
 
 export const router = createBrowserRouter([
 
@@ -42,11 +45,21 @@ export const router = createBrowserRouter([
             }
             ,
             {
-                path: "/userProfile",
+                path: "/updateUserProfile",
                 element: <UserProfile />
-            }
+            },
+            {
+                path: "/allBookings",
+                element: <AllBookings />
+            },
+
         ]
+    }, {
+        path: "/login",
+        element: <Login />
+    },
+    {
+        path: "/signup",
+        element: <Signup />
     }
-
-
 ])

@@ -1,0 +1,28 @@
+.registration input {
+    margin: 10px 0 20px 0;
+}
+
+.registration label {
+    font-weight: bold;
+}
+
+.login_title {
+    font-weight: bold;
+    text-align: center;
+    font-size: 32px ;
+}
+.auth_wrapper{
+    margin-top: 100px;
+}
+.auth_wrapper button{
+    background-color: #DA8B68;
+    border: 1px solid #DA8B68 ;
+    width: 100%;
+    font-weight: bold;
+    margin-top: 20px;
+}
+.auth_wrapper button:hover{
+    border: 1px solid #DA8B68 ;
+    background-color: transparent;
+    color: #DA8B68;
+}

@@ -7,7 +7,7 @@ const UserProfile = () => {
             <div className="container">
                 <div className='profile_container'>
                     {/* <h5 className='user_profile'>User Profile</h5> */}
-                    <h4 className='order_list_title'>Your Profile</h4>
+                    <h4 className='order_list_title'>Update Your Profile</h4>
                     <div>
                         <div className=''>
                             <div className="profile_card">
