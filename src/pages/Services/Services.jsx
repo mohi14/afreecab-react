@@ -4,11 +4,11 @@ import application_two from '../../assets/application_two.png'
 const Services = () => {
     return (
         <>
-            <main class="main_site">
+            <main className="main_site">
 
-                <article class="services_article">
+                <article className="services_article">
 
-                    <section class="services_section">
+                    <section className="services_section">
 
 
                         <h1>1. NOS SERVICES</h1>

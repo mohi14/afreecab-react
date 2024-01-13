@@ -9,7 +9,7 @@ const OrderList = () => {
                 <div className="container">
                     <h4 className=' order_list_title'>Your Order List</h4>
 
-                    <table class="table" >
+                    <table className="table" >
                         <thead className='' style={{ background: "#E2E5E5", height: "56px" }}>
 
                             <th scope="col" className=''></th>
@@ -32,7 +32,7 @@ const OrderList = () => {
                                     <button className='status_btn'>Pending</button>
                                 </td>
 
-                                <td ><i class="fa-solid fa-xmark"></i></td>
+                                <td ><i className="fa-solid fa-xmark"></i></td>
                             </tr>
                             <tr className=''>
                                 <th scope="row"><img src={car} alt="car" /></th>
@@ -46,7 +46,7 @@ const OrderList = () => {
                                 </td>
 
 
-                                <td ><i class="fa-solid fa-xmark"></i></td>
+                                <td ><i className="fa-solid fa-xmark"></i></td>
                             </tr>
                             <tr className=''>
                                 <th scope="row">
@@ -61,7 +61,7 @@ const OrderList = () => {
                                 </td>
 
 
-                                <td ><i class="fa-solid fa-xmark"></i></td>
+                                <td ><i className="fa-solid fa-xmark"></i></td>
                             </tr>
 
                         </tbody>

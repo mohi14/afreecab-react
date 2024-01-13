@@ -6,11 +6,11 @@ import vtc_driver from '../../../assets/vtc_driver.png'
 const Introduction = () => {
     return (
         <>
-            <section class="introduction_section">
+            <section className="introduction_section">
 
-                <div class="intro_container availability_container">
+                <div className="intro_container availability_container">
 
-                    <figure class="figure_hero figure_7days">
+                    <figure className="figure_hero figure_7days">
                         <img src={sevendays} />
                     </figure>
 
@@ -23,9 +23,9 @@ const Introduction = () => {
 
                 </div>
 
-                <div class="intro_container price_container">
+                <div className="intro_container price_container">
 
-                    <figure class="figure_hero figure_price">
+                    <figure className="figure_hero figure_price">
                         <img src={fixed_price} />
                     </figure>
 
@@ -43,7 +43,7 @@ const Introduction = () => {
 
                 </div>
 
-                <div class="intro_container driver_container">
+                <div className="intro_container driver_container">
 
                     <figure>
                         <img src={vtc_driver} />

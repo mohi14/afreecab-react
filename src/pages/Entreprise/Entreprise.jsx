@@ -4,11 +4,11 @@ const Entreprise = () => {
     return (
         <>
 
-            <main class="main_site">
+            <main className="main_site">
 
-                <article class="company_article">
+                <article className="company_article">
 
-                    <section class="company_section">
+                    <section className="company_section">
 
 
                         <h1>2. NOTRE ENTREPRISE</h1>

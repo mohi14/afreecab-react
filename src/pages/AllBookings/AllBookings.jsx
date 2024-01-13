@@ -3,10 +3,10 @@ import './AllBookings.css'
 const AllBookings = () => {
     return (
         <>
-            <div class="allBookings container table-responsive " style={{ marginTop: "200px" }}>
+            <div className="allBookings container table-responsive " style={{ marginTop: "200px" }}>
             <h4 style={{color:"black", fontSize:"32px" ,fontWeight:"bold",textAlign:"center",margin:"20px 0"}}>All Booking List </h4>
-                <table class="table table-bordered table-hover">
-                    <thead class="thead-dark">
+                <table className="table table-bordered table-hover">
+                    <thead className="thead-dark">
                         <tr>
                             <th scope="col">CAR</th>
                             <th scope="col">Customer</th>
@@ -33,7 +33,7 @@ const AllBookings = () => {
                                 </div>
                             </td>
                             <td>
-                                <select class="form-select" aria-label="Default select example">
+                                <select className="form-select" aria-label="Default select example">
                                     <option selected>select</option>
                                     <option value="3">Accept</option>
                                     <option value="2">Canceled</option>
@@ -60,7 +60,7 @@ const AllBookings = () => {
                                 </div>
                             </td>
                             <td>
-                                <select class="form-select" aria-label="Default select example">
+                                <select className="form-select" aria-label="Default select example">
                                     <option selected>select</option>
                                     <option value="3">Accept</option>
                                     <option value="2">Canceled</option>
@@ -87,7 +87,7 @@ const AllBookings = () => {
                                 </div>
                             </td>
                             <td>
-                                <select class="form-select" aria-label="Default select example">
+                                <select className="form-select" aria-label="Default select example">
                                     <option selected>select</option>
                                     <option value="3">Accept</option>
                                     <option value="2">Canceled</option>
@@ -114,7 +114,7 @@ const AllBookings = () => {
                                 </div>
                             </td>
                             <td>
-                                <select class="form-select" aria-label="Default select example">
+                                <select className="form-select" aria-label="Default select example">
                                     <option selected>select</option>
                                     <option value="3">Accept</option>
                                     <option value="2">Canceled</option>

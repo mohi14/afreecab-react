@@ -50,6 +50,10 @@ export const router = createBrowserRouter([
                 element: <UpdateUserProfile />
             },
             {
+                path: "/userProfile",
+                element: <UserProfile />
+            },
+            {
                 path: "/allBookings",
                 element: <AllBookings />
             },

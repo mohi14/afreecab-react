@@ -15,39 +15,39 @@ const UpdateUserProfile = () => {
                                 </div>
                                 <div className="row">
                                     <div className="col-lg-6">
-                                        <div class="mb-3">
-                                            <label for="exampleFormControlInput1" class="form-label">First Name</label>
-                                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Enter your first name" />
+                                        <div className="mb-3">
+                                            <label for="exampleFormControlInput1" className="form-label">First Name</label>
+                                            <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="Enter your first name" />
                                         </div>
                                     </div>
                                     <div className="col-lg-6">
-                                        <div class="mb-3">
-                                            <label for="exampleFormControlInput1" class="form-label">Last Name</label>
-                                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Enter your last name" />
+                                        <div className="mb-3">
+                                            <label for="exampleFormControlInput1" className="form-label">Last Name</label>
+                                            <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="Enter your last name" />
                                         </div>
                                     </div>
                                     <div className="col-lg-6">
-                                        <div class="mb-3">
-                                            <label for="exampleFormControlInput1" class="form-label">Email</label>
-                                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Enter your email" />
+                                        <div className="mb-3">
+                                            <label for="exampleFormControlInput1" className="form-label">Email</label>
+                                            <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="Enter your email" />
                                         </div>
                                     </div>
                                     <div className="col-lg-6">
-                                        <div class="mb-3">
-                                            <label for="exampleFormControlInput1" class="form-label">Password</label>
-                                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Enter your password" />
+                                        <div className="mb-3">
+                                            <label for="exampleFormControlInput1" className="form-label">Password</label>
+                                            <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="Enter your password" />
                                         </div>
                                     </div>
                                     <div className="col-lg-6">
-                                        <div class="mb-3">
-                                            <label for="exampleFormControlInput1" class="form-label">Address</label>
-                                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Enter your address" />
+                                        <div className="mb-3">
+                                            <label for="exampleFormControlInput1" className="form-label">Address</label>
+                                            <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="Enter your address" />
                                         </div>
                                     </div>
                                     <div className="col-lg-6">
-                                        <div class="mb-3">
-                                            <label for="exampleFormControlInput1" class="form-label">City</label>
-                                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Enter your city" />
+                                        <div className="mb-3">
+                                            <label for="exampleFormControlInput1" className="form-label">City</label>
+                                            <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="Enter your city" />
                                         </div>
                                     </div>
 

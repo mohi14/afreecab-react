@@ -4,10 +4,10 @@ const Contact = () => {
     return (
         <>
 
-            <main class="main_site">
+            <main className="main_site">
 
-                <article class="contact_article">
-                    <section class="contact_section">
+                <article className="contact_article">
+                    <section className="contact_section">
                         <form>
                             <h1>3. NOUS CONTACTER</h1>
                             <p>Pour toutes informations, réservations, partenariat etc...</p>
