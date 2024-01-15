@@ -1,20 +1,52 @@
-import React from 'react'
+import React, { useRef, useState } from 'react'
 import './UserProfile.css'
-import user from '../../assets/user.jpeg'
 import { Link } from 'react-router-dom'
 
 const UserProfile = () => {
+
+    const fileInputRef = useRef(null);
+    const [selectedImage, setSelectedImage] = useState(null);
+
+    const handleImageClick = () => {
+        fileInputRef.current?.click();
+    };
+
+    const handleFileChange = (event) => {
+        const selectedFile = event.target.files?.[0];
+        if (selectedFile) {
+            const imageUrl = URL.createObjectURL(selectedFile);
+            setSelectedImage(imageUrl);
+        }
+    };
+
+
     return (
         <>
             <div class="container emp-profile">
                 <form method="post">
-                    <div class="row">
+                    <div class="row align-items-center ">
                         <div class="col-md-4">
                             <div class="profile-img">
-                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt="" />
-                                <div class="file btn btn-lg btn-primary">
-                                    Change Photo
-                                    <input type="file" name="file" />
+                                <input
+                                    type="file"
+                                    ref={fileInputRef}
+                                    style={{ display: 'none' }}
+                                    onChange={handleFileChange}
+                                />
+                                <div className="m-auto mb-[20px]" style={{ position: 'relative', width: '300px', height: '200px' }}>
+                                    <img
+                                        src={selectedImage || "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog"}
+                                        alt="Selected"
+                                        layout="fill"
+                                        objectFit="cover"
+                                        onClick={handleImageClick}
+                                        style={{ borderRadius: "" }}
+                                    />
+                                    <div class="file btn btn-lg btn-primary">
+                                        Change Photo
+                                        <input type="" name="file" />
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
