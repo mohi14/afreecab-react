@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react'
 import './UserProfile.css'
 import { Link } from 'react-router-dom'
+import OrderList from '../OrderList/OrderList';
 
 const UserProfile = () => {
 
@@ -18,7 +19,7 @@ const UserProfile = () => {
             setSelectedImage(imageUrl);
         }
     };
-    
+
     return (
         <>
             <div class="container emp-profile">
@@ -119,15 +120,17 @@ const UserProfile = () => {
                         </div>
                         <div class="col-md-2">
                             <Link to="/updateUserProfile">
-
                                 <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile" />
-
                             </Link>
                         </div>
                     </div>
 
                 </form>
             </div>
+
+            {/* booking list */}
+            <OrderList />
+
 
         </>
     )

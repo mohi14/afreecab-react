@@ -5,7 +5,7 @@ const OrderList = () => {
     return (
         <>
 
-            <div style={{ marginTop: "150px" }}>
+            <div style={{ marginTop: "0px",marginBottom:"100px" }}>
                 <div className="container">
                     <h4 className=' order_list_title'>Your Order List</h4>
 
@@ -59,8 +59,6 @@ const OrderList = () => {
                                 <td className=''>
                                     <button className='status_btn'>Pending</button>
                                 </td>
-
-
                                 <td ><i className="fa-solid fa-xmark"></i></td>
                             </tr>
 

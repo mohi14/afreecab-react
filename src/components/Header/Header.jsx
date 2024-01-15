@@ -1,5 +1,6 @@
 import React from 'react'
 import logo from '../../assets/afreecab_logo_alt.png'
+import user from '../../assets/user.avif'
 import { Link } from 'react-router-dom';
 
 const Header = () => {
@@ -16,7 +17,12 @@ const Header = () => {
                             <li className="item_menu_header"><Link to="/services">NOS SERVICES</Link></li>
                             <li className="item_menu_header"><Link to="/entreprise">NOTRE ENTREPRISE</Link></li>
                             <li className="item_menu_header"><Link to="/contact">NOUS CONTACTER</Link></li>
-                            {/* <li className="item_menu_header"><Link to="/contact">Order</Link></li> */}
+                            <li className="item_menu_header">
+                                <Link to="/userProfile">
+                                    <img style={{ height: "60px", width: "60px" }} src={user} alt="" />
+                                    <span className='text-dark'> Nicolos </span>
+                                </Link>
+                            </li>
                         </ul>
 
                     </nav>

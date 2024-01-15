@@ -39,7 +39,7 @@ export const router = createBrowserRouter([
                 path: "/searchResults",
                 element: <SearchResults />
             },
-          
+
             {
                 path: "/updateUserProfile",
                 element: <UpdateUserProfile />
