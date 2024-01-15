@@ -18,7 +18,7 @@ const SearchBanner = () => {
         <main className="main_site">
             <article>
                 <section className="form_section">
-                    <p className="log_section"><Link className="sign_in" to="/login">S'INSCRIRE </Link> | <Link className="log_in" to="/signup"> SE
+                    <p className="log_section"><Link className="sign_in" to="/signup">S'INSCRIRE </Link> | <Link className="log_in" to="/login"> SE
                         CONNECTER</Link></p>
 
                     <h1>Votre service vtc haut de gamme aux couleurs de l'Afrique.</h1>

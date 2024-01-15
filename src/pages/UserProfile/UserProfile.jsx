@@ -18,8 +18,7 @@ const UserProfile = () => {
             setSelectedImage(imageUrl);
         }
     };
-
-
+    
     return (
         <>
             <div class="container emp-profile">
