@@ -1,10 +1,8 @@
-import React, { useRef, useState } from 'react'
 import './UserProfile.css'
 import { Link } from 'react-router-dom'
 import OrderList from '../OrderList/OrderList';
 
 const UserProfile = () => {
-
 
     return (
         <>
@@ -13,7 +11,6 @@ const UserProfile = () => {
                     <div class="row align-items-center ">
                         <div class="col-md-4">
                             <div class="profile-img">
-                               
                                 <div className="m-auto mb-[20px]" style={{ position: 'relative', width: '300px', height: '200px' }}>
                                     <img
                                         src={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog"}
@@ -21,7 +18,6 @@ const UserProfile = () => {
                                         layout="fill"
                                         objectFit="cover"
                                     />
-
                                 </div>
                             </div>
                         </div>
