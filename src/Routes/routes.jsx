@@ -40,10 +40,10 @@ export const router = createBrowserRouter([
                 element: <SearchResults />
             }
             ,
-            {
-                path: "/orderList",
-                element: <OrderList />
-            },
+            // {
+            //     path: "/orderList",
+            //     element: <OrderList />
+            // },
             {
                 path: "/updateUserProfile",
                 element: <UpdateUserProfile />
