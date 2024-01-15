@@ -19,14 +19,13 @@ const Login = () => {
                                 <fieldset>
                                     <legend className='login_title'>User Login</legend>
 
-
                                     <div className="form-group">
                                         <label for="exampleInputEmail1">Email Address *</label>
-                                        <input type="email" className="form-control" id="exampleInputEmail1" />
+                                        <input placeholder='Enter yur email' type="email" className="form-control" id="exampleInputEmail1" />
                                     </div>
                                     <div className="form-group">
                                         <label for="exampleInputPassword1">Password *</label>
-                                        <input type="password" className="form-control" id="exampleInputPassword1" />
+                                        <input placeholder='Enter your password' type="password" className="form-control" id="exampleInputPassword1" />
                                     </div>
 
                                     <div className="form-check form-group d-flex justify-content-end">

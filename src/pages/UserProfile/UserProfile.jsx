@@ -10,11 +10,19 @@ const UserProfile = () => {
                     <div className="col-lg-4">
                         <h1>Account Info</h1>
                         <img src={user} alt="" />
-                        <div>
-                            <span style={{ borderBottom: "1px solid red" }}>Name: Tonni Akter</span>
+                        <div className='mt-3 w-100'>
+                            <span style={{ borderBottom: "1px solid grey" }}>Name: Nicolos</span>
+                        </div>
+                        <div className='mt-3'>
+                            <span style={{ borderBottom: "1px solid grey" }}>Email: nicolos@gmail.com</span>
+                        </div>
+                        <div className='mt-3'>
+                            <span style={{ borderBottom: "1px solid grey" }}>Address: Mirpur-1 </span>
+                        </div>
+                        <div className='mt-3'>
+                            <span style={{ borderBottom: "1px solid grey" }}>City: Dhaka</span>
                         </div>
                     </div>
-
 
                     {/* <div className="col-lg-8">
 

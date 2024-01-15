@@ -43,8 +43,7 @@ export const router = createBrowserRouter([
             {
                 path: "/orderList",
                 element: <OrderList />
-            }
-            ,
+            },
             {
                 path: "/updateUserProfile",
                 element: <UpdateUserProfile />
