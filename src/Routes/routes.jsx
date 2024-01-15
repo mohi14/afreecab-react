@@ -11,6 +11,7 @@ import Login from "../pages/Login/Login";
 import Signup from "../pages/Signup/Signup";
 import AllBookings from "../pages/AllBookings/AllBookings";
 import UpdateUserProfile from "../pages/UpdateUserProfile/UpdateUserProfile";
+import DistanceCalculator from "../components/DistanceCalculator/DistanceCalculator";
 
 export const router = createBrowserRouter([
 
@@ -51,6 +52,10 @@ export const router = createBrowserRouter([
             {
                 path: "/allBookings",
                 element: <AllBookings />
+            },
+            {
+                path: "/distance",
+                element: <DistanceCalculator />
             },
         ]
     }, {

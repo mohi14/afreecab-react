@@ -1,9 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import signup from '../../assets/signup.avif';
 import './SignUp.css'
 import { Link } from 'react-router-dom';
 
 const Signup = () => {
+
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [phoneNumber, setPhoneNumber] = useState("");
+    const [address, setAddress] = useState("");
+
 
     return (
         <>
@@ -21,11 +29,11 @@ const Signup = () => {
                                 <fieldset>
                                     <legend className='login_title'>User Registration</legend>
                                     <div className="form-group">
-                                        <label for="exampleInputPassword1">Name *</label>
+                                        <label for="exampleInputPassword1">First Name</label>
                                         <input type="text" className="form-control" id="exampleInputPassword1" placeholder='Enter your name' />
                                     </div>
                                     <div className="form-group">
-                                        <label for="exampleInputPassword1">Username *</label>
+                                        <label for="exampleInputPassword1">Last Name</label>
                                         <input placeholder='Enter your Username' type="text" className="form-control" id="exampleInputPassword1" />
                                     </div>
                                     <div className="form-group">
@@ -37,8 +45,12 @@ const Signup = () => {
                                         <input placeholder='Enter your password' type="password" className="form-control" id="exampleInputPassword1" />
                                     </div>
                                     <div className="form-group">
-                                        <label for="exampleInputPassword1">Confirm Password *</label>
-                                        <input placeholder='Retype your password' type="password" className="form-control" id="exampleInputPassword1" />
+                                        <label for="exampleInputPassword1">Phone Number</label>
+                                        <input placeholder='Enter your phone number' type="number" className="form-control" id="exampleInputPassword1" />
+                                    </div>
+                                    <div className="form-group">
+                                        <label for="exampleInputPassword1">Address</label>
+                                        <input placeholder='Enter your address' type="text" className="form-control" id="exampleInputPassword1" />
                                     </div>
 
                                     <div className="form-check form-group d-flex justify-content-end">
@@ -46,7 +58,7 @@ const Signup = () => {
                                     </div>
 
                                     <div className="form-group d-flex justify-content-start">
-                                        <button type="submit" className="btn ">Login</button>
+                                        <button type="submit" className="btn ">Sign Up</button>
                                     </div>
 
                                 </fieldset>
