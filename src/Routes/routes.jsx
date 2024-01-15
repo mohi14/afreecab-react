@@ -38,12 +38,8 @@ export const router = createBrowserRouter([
             {
                 path: "/searchResults",
                 element: <SearchResults />
-            }
-            ,
-            // {
-            //     path: "/orderList",
-            //     element: <OrderList />
-            // },
+            },
+          
             {
                 path: "/updateUserProfile",
                 element: <UpdateUserProfile />
@@ -56,7 +52,6 @@ export const router = createBrowserRouter([
                 path: "/allBookings",
                 element: <AllBookings />
             },
-
         ]
     }, {
         path: "/login",
