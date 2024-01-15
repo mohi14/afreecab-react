@@ -5,20 +5,6 @@ import OrderList from '../OrderList/OrderList';
 
 const UserProfile = () => {
 
-    const fileInputRef = useRef(null);
-    const [selectedImage, setSelectedImage] = useState(null);
-
-    const handleImageClick = () => {
-        fileInputRef.current?.click();
-    };
-
-    const handleFileChange = (event) => {
-        const selectedFile = event.target.files?.[0];
-        if (selectedFile) {
-            const imageUrl = URL.createObjectURL(selectedFile);
-            setSelectedImage(imageUrl);
-        }
-    };
 
     return (
         <>
@@ -27,36 +13,20 @@ const UserProfile = () => {
                     <div class="row align-items-center ">
                         <div class="col-md-4">
                             <div class="profile-img">
-                                <input
-                                    type="file"
-                                    ref={fileInputRef}
-                                    style={{ display: 'none' }}
-                                    onChange={handleFileChange}
-                                />
+                               
                                 <div className="m-auto mb-[20px]" style={{ position: 'relative', width: '300px', height: '200px' }}>
                                     <img
-                                        src={selectedImage || "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog"}
+                                        src={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog"}
                                         alt="Selected"
                                         layout="fill"
                                         objectFit="cover"
-                                        onClick={handleImageClick}
-                                        style={{ borderRadius: "" }}
                                     />
-                                    <div class="file btn btn-lg btn-primary">
-                                        Change Photo
-                                        <input type="" name="file" />
-                                    </div>
 
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="profile-head">
-                                <h5>
-                                    Kshiti Ghelani
-                                </h5>
-
-                                <p class="proile-rating"></p>
                                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                                     <li class="nav-item">
                                         <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
@@ -124,14 +94,10 @@ const UserProfile = () => {
                             </Link>
                         </div>
                     </div>
-
                 </form>
             </div>
-
             {/* booking list */}
             <OrderList />
-
-
         </>
     )
 }
