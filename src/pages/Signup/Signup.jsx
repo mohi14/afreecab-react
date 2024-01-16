@@ -17,7 +17,7 @@ const Signup = () => {
     const handleSubmit = async (e) => {
 
         e.preventDefault();
-        
+
         const formData = {
             firstName,
             lastName,
@@ -26,12 +26,13 @@ const Signup = () => {
             phoneNumber,
             address,
         };
+
         console.log(formData);
-    
+
         try {
             const response = await apiInstance.post('/user/register', formData);
             console.log(response.data);
-    
+
             // Show success alert using Swal
             Swal.fire({
                 icon: 'success',
@@ -40,12 +41,12 @@ const Signup = () => {
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'OK',
             });
-    
+
             // Optionally, you can redirect the user to the login page or any other page
             navigate('/login')
         } catch (error) {
             console.error('Error:', error);
-    
+
             // Show error alert using Swal
             Swal.fire({
                 icon: 'error',

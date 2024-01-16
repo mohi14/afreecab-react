@@ -4,6 +4,7 @@ import { CiCamera } from "react-icons/ci";
 import apiInstance from '../../utils/instance';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router';
+import user from '../../assets/user.avif'
 
 const UpdateUserProfile = () => {
     const navigate = useNavigate()
@@ -85,6 +86,27 @@ const UpdateUserProfile = () => {
         }
     };
 
+
+    const [data, setData] = useState(null);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        const authToken = localStorage.getItem('token')
+        apiInstance.get('/user/myInfo', {
+            headers: {
+                'Authorization': `Bearer ${authToken}`,
+                'Content-Type': 'application/json',
+            },
+        })
+            .then(response => {
+                setData(response.data);
+                console.log(response.data)
+            })
+            .catch(error => {
+                setError(error.message || 'An error occurred');
+                console.log(error.message)
+            });
+    }, []);
     return (
         <>
             <div className="container">
@@ -102,14 +124,15 @@ const UpdateUserProfile = () => {
                                             style={{ display: 'none' }}
                                             onChange={handleFileChange}
                                         />
-                                        <div className="position-relative m-auto mb-[20px]" style={{ position: 'relative', width: '300px', height: '200px' }}>
+
+                                        <div className=" m-auto mb-[20px]" style={{ position: 'relative', width: '300px', height: '200px' }}>
                                             <img
-                                                src={selectedImage || "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog"}
-                                                alt="Selected"
+                                                src={selectedImage ? selectedImage : data?.image}
+                                                alt="profile"
                                                 layout="fill"
                                                 objectFit="cover"
                                                 onClick={handleImageClick}
-                                                style={{ borderRadius: "50%" }}
+                                                style={{ borderRadius: "50%",width:"150px",height:"150px" }}
                                             />
                                             <div className="position-absolute" style={{ bottom: "36%", right: "79px" }}>
                                                 <CiCamera />
@@ -121,37 +144,37 @@ const UpdateUserProfile = () => {
                                     <div className="col-lg-6">
                                         <div className="mb-3">
                                             <label for="exampleFormControlInput1" className="form-label">First Name</label>
-                                            <input   required name='firstName' type="text" className="form-control" placeholder="Enter your first name" />
+                                            <input required name='firstName' type="text" className="form-control" placeholder="Enter your first name" />
                                         </div>
                                     </div>
                                     <div className="col-lg-6">
                                         <div className="mb-3">
                                             <label for="exampleFormControlInput1" className="form-label">Last Name</label>
-                                            <input   required  name='lastName' type="text" className="form-control" placeholder="Enter your last name" />
+                                            <input required name='lastName' type="text" className="form-control" placeholder="Enter your last name" />
                                         </div>
                                     </div>
                                     <div className="col-lg-6">
                                         <div className="mb-3">
                                             <label for="exampleFormControlInput1" className="form-label">Email</label>
-                                            <input  required  name="email" type="email" className="form-control" placeholder="Enter your email" />
+                                            <input required name="email" type="email" className="form-control" placeholder="Enter your email" />
                                         </div>
                                     </div>
                                     <div className="col-lg-6">
                                         <div className="mb-3">
                                             <label for="exampleFormControlInput1" className="form-label">Password</label>
-                                            <input   required name='password' type="password" className="form-control" placeholder="Enter your password" />
+                                            <input required name='password' type="password" className="form-control" placeholder="Enter your password" />
                                         </div>
                                     </div>
                                     <div className="col-lg -6">
                                         <div className="mb-3">
                                             <label for="exampleFormControlInput1" className="form-label">Address</label>
-                                            <input  required  name="address" type="text" className="form-control" placeholder="Enter your address" />
+                                            <input required name="address" type="text" className="form-control" placeholder="Enter your address" />
                                         </div>
                                     </div>
                                     <div className="col-lg-6">
                                         <div className="mb-3">
                                             <label for="exampleFormControlInput1" className="form-label">Phone Number</label>
-                                            <input  required  name='phoneNumber' type="number" className="form-control" placeholder="Enter your phone number" />
+                                            <input required name='phoneNumber' type="number" className="form-control" placeholder="Enter your phone number" />
                                         </div>
                                     </div>
 

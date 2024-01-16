@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import OrderList from '../OrderList/OrderList';
 import apiInstance from '../../utils/instance';
 import { useEffect, useState } from 'react';
-
+import user from '../../assets/user.avif'
 const UserProfile = () => {
 
     const [data, setData] = useState(null);
@@ -38,7 +38,7 @@ const UserProfile = () => {
 
                                 <div className="m-auto mb-[20px]" style={{ position: 'relative', width: '300px', height: '200px' }}>
                                     <img
-                                        src={data?.image && data?.image}
+                                        src={data?.image ? data?.image : user}
                                         alt="Selected"
                                         layout="fill"
                                         objectFit="cover"
