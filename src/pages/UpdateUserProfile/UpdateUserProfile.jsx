@@ -72,8 +72,6 @@ const UpdateUserProfile = () => {
                     text: "User profile updated successfully",
                 });
                 navigate('/userProfile')
-
-                // Clear the image URL from local storage on successful update
                 localStorage.removeItem('userProfileImage');
             }
         } catch (error) {

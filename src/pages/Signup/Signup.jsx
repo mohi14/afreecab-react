@@ -12,7 +12,7 @@ const Signup = () => {
     const [phoneNumber, setPhoneNumber] = useState("");
     const [address, setAddress] = useState("");
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         const formData = {
             firstName,
@@ -23,13 +23,13 @@ const Signup = () => {
             address
         };
         console.log(formData)
-        apiInstance.post('/user/register', formData)
-            .then(res => {
-                console.log(res.data);
-            })
-            .catch(error => {
-                console.log('error', error);
-            });
+
+        try {
+            const response = await apiInstance.post('/user/register', formData);
+            console.log(response.data);
+        } catch (error) {
+            console.error('Error:', error);
+        }
     }
 
     return (
