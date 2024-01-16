@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import signup from '../../assets/signup.avif';
 import './SignUp.css'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import apiInstance from '../../utils/instance';
+import Swal from 'sweetalert2';
 
 const Signup = () => {
+    const navigate = useNavigate()
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
@@ -13,24 +15,47 @@ const Signup = () => {
     const [address, setAddress] = useState("");
 
     const handleSubmit = async (e) => {
+
         e.preventDefault();
+        
         const formData = {
             firstName,
             lastName,
             email,
             password,
             phoneNumber,
-            address
+            address,
         };
-        console.log(formData)
-
+        console.log(formData);
+    
         try {
             const response = await apiInstance.post('/user/register', formData);
             console.log(response.data);
+    
+            // Show success alert using Swal
+            Swal.fire({
+                icon: 'success',
+                title: 'Registration Successful',
+                text: 'You have successfully registered!',
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'OK',
+            });
+    
+            // Optionally, you can redirect the user to the login page or any other page
+            navigate('/login')
         } catch (error) {
             console.error('Error:', error);
+    
+            // Show error alert using Swal
+            Swal.fire({
+                icon: 'error',
+                title: 'Registration Failed',
+                text: 'There was an error during registration. Please try again.',
+                confirmButtonColor: '#d33',
+                confirmButtonText: 'OK',
+            });
         }
-    }
+    };
 
     return (
         <>

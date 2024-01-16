@@ -1,28 +1,50 @@
 import React, { useState } from 'react'
 import signup from '../../assets/login.avif';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import apiInstance from '../../utils/instance';
+import Swal from 'sweetalert2';
 
 const Login = () => {
+    const navigate = useNavigate()
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
         const formData = {
             email,
             password,
         };
-        console.log(formData)
+
         apiInstance.post('/user/login', formData)
             .then(res => {
                 console.log(res.data.accessToken);
-                localStorage.setItem('token', res.data.accessToken)
+                localStorage.setItem('token', res.data.accessToken);
+
+                // Show success alert using Swal
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Login Successful',
+                    text: 'You have successfully logged in!',
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'OK',
+                });
+                navigate('/userProfile')
             })
             .catch(error => {
-                console.log('error', error);
+                console.error('Error:', error);
+
+                // Show error alert using Swal
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Login Failed',
+                    text: 'Invalid credentials. Please try again.',
+                    confirmButtonColor: '#d33',
+                    confirmButtonText: 'OK',
+                });
             });
-    }
+    };
 
     return (
         <>
@@ -42,7 +64,7 @@ const Login = () => {
                                     <div className="form-group">
                                         <label>Email Address *</label>
                                         <input value={email}
-                                            onChange={(e) => setEmail(e.target.value)} placeholder='Enter yur email' type="email" className="form-control" id="exampleInputEmail1" />
+                                            onChange={(e) => setEmail(e.target.value)} placeholder='Enter your email' type="email" className="form-control" id="exampleInputEmail1" />
                                     </div>
                                     <div className="form-group">
                                         <label>Password *</label>
