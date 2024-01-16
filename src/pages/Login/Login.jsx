@@ -1,8 +1,29 @@
-import React from 'react'
+import React, { useState } from 'react'
 import signup from '../../assets/login.avif';
 import { Link } from 'react-router-dom';
+import apiInstance from '../../utils/instance';
 
 const Login = () => {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const formData = {
+            email,
+            password,
+        };
+        console.log(formData)
+        apiInstance.post('/user/login', formData)
+            .then(res => {
+                console.log(res.data.accessToken);
+                localStorage.setItem('token', res.data.accessToken)
+            })
+            .catch(error => {
+                console.log('error', error);
+            });
+    }
+
     return (
         <>
             <div className="container auth_wrapper">
@@ -15,17 +36,18 @@ const Login = () => {
                             <div className="page-header text-center">
                                 <h1>Login</h1>
                             </div>
-                            <form id="member-registration" action="/astroidnew/index.php/pages/register?task=registration.register" method="post" className="form-validate form-horizontal well" enctype="multipart/form-data">
+                            <form onSubmit={handleSubmit} className="form-validate form-horizontal well" enctype="multipart/form-data">
                                 <fieldset>
                                     <legend className='login_title'>User Login</legend>
-
                                     <div className="form-group">
-                                        <label for="exampleInputEmail1">Email Address *</label>
-                                        <input placeholder='Enter yur email' type="email" className="form-control" id="exampleInputEmail1" />
+                                        <label>Email Address *</label>
+                                        <input value={email}
+                                            onChange={(e) => setEmail(e.target.value)} placeholder='Enter yur email' type="email" className="form-control" id="exampleInputEmail1" />
                                     </div>
                                     <div className="form-group">
-                                        <label for="exampleInputPassword1">Password *</label>
-                                        <input placeholder='Enter your password' type="password" className="form-control" id="exampleInputPassword1" />
+                                        <label>Password *</label>
+                                        <input value={password}
+                                            onChange={(e) => setPassword(e.target.value)} placeholder='Enter your password' type="password" className="form-control" id="exampleInputPassword1" />
                                     </div>
 
                                     <div className="form-check form-group d-flex justify-content-end">
@@ -35,7 +57,7 @@ const Login = () => {
                                     <div className="form-group d-flex justify-content-start">
                                         <button type="submit" className="btn ">Login</button>
                                     </div>
-                                   
+
                                 </fieldset>
                             </form>
                         </div>

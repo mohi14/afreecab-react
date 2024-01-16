@@ -1,8 +1,32 @@
 import './UserProfile.css'
 import { Link } from 'react-router-dom'
 import OrderList from '../OrderList/OrderList';
+import apiInstance from '../../utils/instance';
+import { useEffect, useState } from 'react';
 
 const UserProfile = () => {
+
+    const [data, setData] = useState(null);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        const authToken = localStorage.getItem('token')
+        apiInstance.get('/user/myInfo', {
+            headers: {
+                'Authorization': `Bearer ${authToken}`,
+                'Content-Type': 'application/json',
+            },
+        })
+            .then(response => {
+                setData(response.data);
+                console.log(response.data)
+            })
+            .catch(error => {
+                setError(error.message || 'An error occurred');
+                console.log(error.message)
+            });
+    }, []);
+
 
     return (
         <>
@@ -11,9 +35,10 @@ const UserProfile = () => {
                     <div class="row align-items-center ">
                         <div class="col-md-4">
                             <div class="profile-img">
+
                                 <div className="m-auto mb-[20px]" style={{ position: 'relative', width: '300px', height: '200px' }}>
                                     <img
-                                        src={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog"}
+                                        src={data?.image && data?.image}
                                         alt="Selected"
                                         layout="fill"
                                         objectFit="cover"
@@ -31,20 +56,13 @@ const UserProfile = () => {
                             </div>
                             <div class="tab-content profile-tab" id="myTabContent">
                                 <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <label>User Id</label>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <p>Kshiti123</p>
-                                        </div>
-                                    </div>
+
                                     <div class="row">
                                         <div class="col-md-6">
                                             <label>Name</label>
                                         </div>
                                         <div class="col-md-6">
-                                            <p>Kshiti Ghelani</p>
+                                            <p>{data?.firstName} {data?.lastName}</p>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -52,7 +70,7 @@ const UserProfile = () => {
                                             <label>Email</label>
                                         </div>
                                         <div class="col-md-6">
-                                            <p>kshitighelani@gmail.com</p>
+                                            <p>{data?.email}</p>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -60,7 +78,7 @@ const UserProfile = () => {
                                             <label>Phone</label>
                                         </div>
                                         <div class="col-md-6">
-                                            <p>123 456 7890</p>
+                                            <p>{data?.phoneNumber}</p>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -68,18 +86,9 @@ const UserProfile = () => {
                                             <label>Address</label>
                                         </div>
                                         <div class="col-md-6">
-                                            <p>Mirpur-1 </p>
+                                            <p>{data?.address}</p>
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <label>City</label>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <p>Dhaka </p>
-                                        </div>
-                                    </div>
-
                                 </div>
 
                             </div>
