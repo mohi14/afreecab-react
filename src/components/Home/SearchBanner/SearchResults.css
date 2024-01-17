@@ -13,7 +13,6 @@
     border: 1px solid #DFF2DE;
     cursor: pointer;
 }
-
 .card_header p:hover {
     background-color: transparent;
     border: 1px solid #40B03E;

@@ -19,6 +19,7 @@ const SearchResults = () => {
     const totalCost = totalPassengerCost + totalLuggageCost
     console.log(totalCost)
 
+    
     return (
         <>
             <div className="searchResults">

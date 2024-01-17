@@ -5,13 +5,13 @@ import Services from "../pages/Services/Services";
 import Entreprise from "../pages/Entreprise/Entreprise";
 import Contact from "../pages/Contact/Contact";
 import SearchResults from "../components/Home/SearchBanner/SearchResults";
-import OrderList from "../pages/OrderList/OrderList";
 import UserProfile from './../pages/UserProfile/UserProfile';
 import Login from "../pages/Login/Login";
 import Signup from "../pages/Signup/Signup";
 import AllBookings from "../pages/AllBookings/AllBookings";
 import UpdateUserProfile from "../pages/UpdateUserProfile/UpdateUserProfile";
 import DistanceCalculator from "../components/DistanceCalculator/DistanceCalculator";
+import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
 
@@ -38,20 +38,25 @@ export const router = createBrowserRouter([
             ,
             {
                 path: "/searchResults",
-                element: <SearchResults />
-            },
 
+                element: (
+                    <PrivateRoute>
+                        <SearchResults />
+                    </PrivateRoute>
+                ),
+
+            },
             {
                 path: "/updateUserProfile",
-                element: <UpdateUserProfile />
+                element: <PrivateRoute> <UpdateUserProfile /></PrivateRoute>
             },
             {
                 path: "/userProfile",
-                element: <UserProfile />
+                element: <PrivateRoute><UserProfile /></PrivateRoute>
             },
             {
                 path: "/allBookings",
-                element: <AllBookings />
+                element: <PrivateRoute><AllBookings /></PrivateRoute>
             },
             {
                 path: "/distance",
