@@ -1,8 +1,24 @@
 import React from 'react';
 import './SearchResults.css';
 import car from '../../../assets/car.jpg'
-import star from '../../../assets/star.png'
+import { Link } from 'react-router-dom';
 const SearchResults = () => {
+
+    const storedFormDataString = localStorage.getItem('searchData');
+    const storedFormData = JSON.parse(storedFormDataString);
+    
+    const totalPassengers = storedFormData.totalPassenger
+    const totalLuggage = storedFormData.totalLuggage
+
+    const perPersonCost = 5
+    const perLuggageCost = 10
+
+    const totalPassengerCost = perPersonCost * totalPassengers
+    const totalLuggageCost = perLuggageCost * totalLuggage
+
+    const totalCost = totalPassengerCost + totalLuggageCost
+    console.log(totalCost)
+
     return (
         <>
             <div className="searchResults">
@@ -12,11 +28,6 @@ const SearchResults = () => {
                         <div className="col-lg-4">
                             <div className="card">
                                 <div className='card_header d-flex align-items-center gap-2'>
-                                    <div className='ratings'>
-                                        <img className='' src={star} alt="star" />
-                                        <span>4.8</span>
-                                        <span>(109)</span>
-                                    </div>
                                     <p>Available Now</p>
                                 </div>
                                 <img src={car} alt="" />
@@ -24,58 +35,16 @@ const SearchResults = () => {
                                     <p>FORD FOCUS</p>
                                     <div className='d-flex justify-content-between  car_title'>
                                         <h5 >1.5 EcoBlue MT Titenium X</h5>
-                                        <p>$24.59 <span>/hour</span></p>
+                                        <p>${totalCost} <span>/hour</span></p>
                                     </div>
-                                    <button>Book Now</button>
+                                    <Link to="https://dashboard.stripe.com/register">
+                                        <button >Book Now</button>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
-                        <div className="col-lg-4">
-                            <div className="card">
-                                <div className='card_header d-flex align-items-center gap-2'>
-                                    <div className='ratings'>
-                                        <img className='' src={star} alt="star" />
-                                        <span>4.8</span>
-                                        <span>(109)</span>
-                                    </div>
-                                    <p>Available Now</p>
-                                </div>
-                                <img src={car} alt="" />
-                                <div className="card_body">
-                                    <p>FORD FOCUS</p>
-                                    <div className='d-flex justify-content-between  car_title'>
-                                        <h5 >1.5 EcoBlue MT Titenium X</h5>
-                                        <p>$24.59 <span>/hour</span></p>
-                                    </div>
-                                    <button>Book Now</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-4">
-                            <div className="card">
-                                <div className='card_header d-flex align-items-center gap-2'>
-                                    <div className='ratings'>
-                                        <img className='' src={star} alt="star" />
-                                        <span>4.8</span>
-                                        <span>(109)</span>
-                                    </div>
-                                    <p>Available Now</p>
-                                </div>
-                                <img src={car} alt="" />
-                                <div className="card_body">
-                                    <p>FORD FOCUS</p>
-                                    <div className='d-flex justify-content-between  car_title'>
-                                        <h5 >1.5 EcoBlue MT Titenium X</h5>
-                                        <p>$24.59 <span>/hour</span></p>
-                                    </div>
-                                    <button>Book Now</button>
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
-
             </div>
 
         </>
