@@ -7,6 +7,11 @@ import { useNavigate } from 'react-router';
 import user from '../../assets/user.avif'
 
 const UpdateUserProfile = () => {
+    // const { data, setData } = useData();
+
+    // console.log(data)
+
+
     const navigate = useNavigate()
     const fileInputRef = useRef(null);
     const [selectedImage, setSelectedImage] = useState(null);
@@ -132,7 +137,7 @@ const UpdateUserProfile = () => {
                                                 layout="fill"
                                                 objectFit="cover"
                                                 onClick={handleImageClick}
-                                                style={{ borderRadius: "50%",width:"150px",height:"150px" }}
+                                                style={{ borderRadius: "50%", width: "150px", height: "150px" }}
                                             />
                                             <div className="position-absolute" style={{ bottom: "36%", right: "79px" }}>
                                                 <CiCamera />

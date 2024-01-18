@@ -1,8 +1,12 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import signup from '../../assets/login.avif';
 import { Link, useNavigate } from 'react-router-dom';
 import apiInstance from '../../utils/instance';
 import Swal from 'sweetalert2';
+// import jwt_decode from 'jwt-decode'
+// import { GoogleOAuthProvider } from '@react-oauth/google';
+// import { GoogleLogin } from '@react-oauth/google';
+
 
 const Login = () => {
     const navigate = useNavigate()
@@ -45,6 +49,25 @@ const Login = () => {
                 });
             });
     };
+    
+    const handleCallBackResponse = (response) => {
+        console.log(response.credential)
+
+    }
+    useEffect(() => {
+        google.accounts.id.initialize({
+            client_id: "896031510552-cet1ea1246k91l3ouqagfdldq6tv32no.apps.googleusercontent.com",
+            callback: handleCallBackResponse
+        })
+
+        google.accounts.id.renderButton(document.getElementById('signinDiv'),
+        {
+            theme:'outline',
+            size:'large'
+        }
+        )
+
+    }, [])
 
     return (
         <>
@@ -58,9 +81,34 @@ const Login = () => {
                             <div className="page-header text-center">
                                 <h1>Login</h1>
                             </div>
-                            <form onSubmit={handleSubmit} className="form-validate form-horizontal well" enctype="multipart/form-data">
+                            <form onSubmit={handleSubmit} className="form-validate form-horizontal well" encType="multipart/form-data">
                                 <fieldset>
                                     <legend className='login_title'>User Login</legend>
+
+                                    <div className="m-auto">
+                                        <div id="signinDiv">
+
+                                        </div>
+
+                                        {/* <GoogleOAuthProvider clientId="896031510552-cet1ea1246k91l3ouqagfdldq6tv32no.apps.googleusercontent.com">
+                                            <GoogleLogin
+                                                onSuccess={credentialResponse => {
+                                                    console.log(credentialResponse);
+                                                }}
+                                                onError={() => {
+                                                    console.log('Login Failed');
+                                                }}
+                                            />
+
+                                        </GoogleOAuthProvider>; */}
+
+
+
+
+
+                                        <button className='bg-secondary text-light border-0  w-50 py-2 '>Login with google</button>
+                                    </div>
+                                    <p>----or---</p>
                                     <div className="form-group">
                                         <label>Email Address *</label>
                                         <input value={email}
@@ -79,6 +127,8 @@ const Login = () => {
                                     <div className="form-group d-flex justify-content-start">
                                         <button type="submit" className="btn ">Login</button>
                                     </div>
+
+
 
                                 </fieldset>
                             </form>

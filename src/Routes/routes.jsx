@@ -12,6 +12,7 @@ import AllBookings from "../pages/AllBookings/AllBookings";
 import UpdateUserProfile from "../pages/UpdateUserProfile/UpdateUserProfile";
 import DistanceCalculator from "../components/DistanceCalculator/DistanceCalculator";
 import PrivateRoute from "./PrivateRoute";
+import Payment from "../pages/Payment/Payment";
 
 export const router = createBrowserRouter([
 
@@ -34,6 +35,10 @@ export const router = createBrowserRouter([
             {
                 path: "/contact",
                 element: <Contact />
+            },
+            {
+                path: "/payment",
+                element: <Payment />
             }
             ,
             {
@@ -48,7 +53,9 @@ export const router = createBrowserRouter([
             },
             {
                 path: "/updateUserProfile",
-                element: <PrivateRoute> <UpdateUserProfile /></PrivateRoute>
+                element:
+                    <PrivateRoute> <UpdateUserProfile /></PrivateRoute>
+         
             },
             {
                 path: "/userProfile",
